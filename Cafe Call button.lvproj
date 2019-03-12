@@ -15,11 +15,17 @@
 			<Item Name="Button Handler State.ctl" Type="VI" URL="../Button Class/Button Handler State.ctl"/>
 			<Item Name="TCP Multiple Connections Data.ctl" Type="VI" URL="../Button Class/TCP Multiple Connections Data.ctl"/>
 			<Item Name="TCP Multiple Connections State.ctl" Type="VI" URL="../Button Class/TCP Multiple Connections State.ctl"/>
+			<Item Name="icon.ico" Type="Document" URL="../icon.ico"/>
+			<Item Name="TCP Message Payload.ctl" Type="VI" URL="../Button Class/TCP Message Payload.ctl"/>
+		</Item>
+		<Item Name="SubVIs" Type="Folder">
+			<Item Name="Message Check.vi" Type="VI" URL="../Message Check.vi"/>
+			<Item Name="Parse Message Payload.vi" Type="VI" URL="../TCP Multiple Connections/Parse Message Payload.vi"/>
+			<Item Name="Read TCP Message.vi" Type="VI" URL="../TCP Multiple Connections/Read TCP Message.vi"/>
+			<Item Name="CallButton TCP Server.vi" Type="VI" URL="../TCP Multiple Connections/CallButton TCP Server.vi"/>
 		</Item>
 		<Item Name="Button.lvclass" Type="LVClass" URL="../Button Class/Button.lvclass"/>
 		<Item Name="Main GUI.vi" Type="VI" URL="../Main GUI.vi"/>
-		<Item Name="Message Check.vi" Type="VI" URL="../Message Check.vi"/>
-		<Item Name="icon.ico" Type="Document" URL="../icon.ico"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
@@ -27,14 +33,14 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="Application" Type="EXE">
+			<Item Name="CafeCallButton" Type="EXE">
 				<Property Name="App_copyErrors" Type="Bool">true</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{7B1A4AAC-92F7-4C53-BD1B-4C37897446F8}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{856498AF-1F57-4C1C-8525-7D3A3661E4BB}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{4BE7C3B3-10F3-44D8-9229-FF8EDD10E823}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">Application</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">CafeCallButton</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
@@ -45,7 +51,7 @@
 				<Property Name="Bld_version.build" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/Application.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/CafeCallButton.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
@@ -53,18 +59,18 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/icon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{54D0AC04-954E-4AF3-8283-77CC9DD2D480}</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/TypeDefs/icon.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{0111CAD5-259E-4A9C-9D17-574F02721F11}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main GUI.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">Application</Property>
-				<Property Name="TgtF_internalName" Type="Str">Application</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">CafeCallButton</Property>
+				<Property Name="TgtF_internalName" Type="Str">CafeCallButton</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 </Property>
-				<Property Name="TgtF_productName" Type="Str">Application</Property>
+				<Property Name="TgtF_productName" Type="Str">CafeCallButton</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{05ADFEAE-C480-438D-B729-8820AD5A03D7}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">Application.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>

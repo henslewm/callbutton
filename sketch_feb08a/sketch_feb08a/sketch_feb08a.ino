@@ -24,6 +24,9 @@ const char * host = "CO-OPS-L-191268";  //"192.168.10.207";    // ip or DNS "Use
 const short int BUILT_IN_LED2 = 2; //GPIO2 - D4 - TXD1
 const short int CALL_BUTTON = 4; //GPIO4 - D2 ; GPIO0 - D3
 bool WAITINGONSERVER = false;
+const char ON[] = "ON";
+const char OFF[] = "OFF";
+
 
 // Use WiFiClient class to create TCP connections
 WiFiClient client;
@@ -39,7 +42,6 @@ void setup()
   //Attempt to connect to host router
   WiFi.begin(ssid, pw);
   WiFi.mode(WIFI_STA);
-
   
   // Setup the Serial output for debugging
   Serial.begin(115200);
