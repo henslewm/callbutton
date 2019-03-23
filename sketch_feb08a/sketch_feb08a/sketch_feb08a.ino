@@ -14,8 +14,10 @@
 const char ID[] = "T3A11/A12";
 
 //Configure the WiFi router authentication parameters
-const char ssid[] = "PemCafe1";
-const char pw[] = "3au5j75^s7lk";
+//const char ssid[] = "PemCafe1";
+//const char pw[] = "3au5j75^s7lk";
+const char ssid[] = "simple";
+const char pw[] = "spacecase";
 
 const uint16_t port = 6341;
 const char * host = "CO-OPS-L-191268";  //"192.168.10.207";    // ip or DNS "Use PC Name?"
