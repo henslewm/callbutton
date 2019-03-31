@@ -9,20 +9,23 @@ String ID("T3A11/A12");
 //Configure the WiFi router authentication parameters
 //const char ssid[] = "PemCafe1";
 //const char pw[] = "3au5j75^s7lk";
+
 const char ssid[] = "simple";
 const char pw[] = "spacecase";
 const uint16_t port = 6341;
-const char* host = "192.168.43.37";  //"CO-OPS-L-191268"; // ip or hostname
+const char* host = "CO-OPS-L-191268"; //"192.168.10.213";ip or hostname
 float vccVolt;
 
 //Setup the LED pin number and ON/OFF Buttons
-//GPIO2 - D4 - BUILT_IN_LED2 = 2;
-const short int RST_DISABLE = 3;
-const short int CALL_BUTTON = 4; //GPIO4 - D2 ; GPIO0 - D3
+//GPIO2 - D4 - BUILT_IN_LED2 = 2; //USE LED_BUILTIN instead
+const short int RST_DISABLE = 4;// GPIO4 - D2
+const short int CALL_BUTTON = 16; //GPIO16 - D0 Dude... ; GPIO0 - D3
 String ON = ID + ",ON";
 String OFF = ID + ",OFF";
 bool LED_ON = false;
 ADC_MODE(ADC_VCC);
+
+
 ////////////////////////////////////////////
 //FOR THIS IMPLEMENTATION, USING D0 AS A RESET AND 
 // Use WiFiClient class to create TCP connections
@@ -35,7 +38,7 @@ void setup()
   //RST Enable IO as an OUTPUT and disable reset(LOW)
   pinMode(RST_DISABLE, OUTPUT);
   digitalWrite(RST_DISABLE, LOW);
-  
+   
   // Digital pin for LED as an OUTPUT, turn the LED ON (LOW is the voltage level)
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
@@ -79,13 +82,15 @@ void setup()
 ///////////////////////////////////////////////////////////////////////////////////////
 
 void loop() {
+  //Disable RST
+  //digitalWrite(RST_DISABLE, LOW);
   
   //Turn the LED ON.
   digitalWrite(LED_BUILTIN, LOW);
 
   //Get battery voltage
   vccVolt = ((float)ESP.getVcc())/1024;
-  Serial.printf("Vcc: %f \n",vccVolt);
+  //Serial.printf("Vcc: %f \n",vccVolt);
   
   //SOMEONE PUSHED THE BUTTON
   if(digitalRead(CALL_BUTTON)==LOW){
@@ -116,7 +121,9 @@ void loop() {
     delay(3000);
     
     //Enable Reset from Deep Sleep
-    digitalWrite(RST_DISABLE, HIGH);
+    //digitalWrite(RST_DISABLE, HIGH);
+    
+    delay(3000);
     
     //Go to Deep Sleep
     ESP.deepSleep(0);
