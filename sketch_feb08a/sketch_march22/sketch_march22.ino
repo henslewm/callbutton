@@ -10,10 +10,10 @@ String ID("T3A11/A12");
 //const char ssid[] = "PemCafe1";
 //const char pw[] = "3au5j75^s7lk";
 
-const char ssid[] = "simple";
-const char pw[] = "spacecase";
+const char ssid[] = "D52963_2.4";
+const char pw[] = "TBW48AD604754";
 const uint16_t port = 6341;
-const char* host = "CO-OPS-L-191268"; //"192.168.10.213";ip or hostname
+const char* host = "192.168.1.213";  //ip only
 float vccVolt;
 
 //Setup the LED pin number and ON/OFF Buttons
