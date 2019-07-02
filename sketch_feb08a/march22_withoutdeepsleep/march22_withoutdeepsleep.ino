@@ -4,7 +4,7 @@
 
 ////////////////// Define Variables //////////
 // Configure the device's network info
-String ID("T3F9/F10");
+String ID("T3D7");
 
 //Configure the WiFi router authentication parameters
 const char ssid[] = "PemCafe1";
@@ -19,8 +19,8 @@ float vccVolt;
 //Setup the LED pin number and ON/OFF Buttons
 //const short int GPIO2 - D4 - BUILT_IN_LED2 = 2; //USE LED_BUILTIN instead FOR WEMOS D1 MINI
 //const short int RST_DISABLE = 4;  // GPIO4 - D2
-//const short int BUILT_IN_LED = 2; //USE LED_BUILTIN instead
-const short int CALL_BUTTON = 4; //GPIO16 - D0 Dude... ; GPIO0 - D3
+const short int BUILT_IN_LED = 2;   //USE LED_BUILTIN instead
+const short int CALL_BUTTON = 4;    //GPIO16 - D0 Dude... ; GPIO0 - D3
 String ON = ID + ",ON";
 String OFF = ID + ",OFF";
 bool LED_ON = false;
@@ -35,16 +35,16 @@ WiFiClient client;
 //////////////////// Pre-Running Setup and Configuration of PINS //////////////////
 void setup()
 {
-  
-   WiFi.mode(WIFI_STA);
+
+  WiFi.mode(WIFI_STA);
 
   //RST Enable IO as an OUTPUT and disable reset(LOW)
   //pinMode(RST_DISABLE, OUTPUT);
   //digitalWrite(RST_DISABLE, LOW);
 
   // Digital pin for LED as an OUTPUT, turn the LED ON (LOW is the voltage level)
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
+  pinMode(BUILT_IN_LED, OUTPUT);
+  digitalWrite(BUILT_IN_LED, HIGH);
 
   //Call buttons Digital Pin as INPUT
   pinMode(CALL_BUTTON, INPUT);
@@ -68,7 +68,7 @@ void loop() {
           WAITINGONSERVER=true;
           
           //Turn on the LED
-          digitalWrite(LED_BUILTIN, LOW);
+          digitalWrite(BUILT_IN_LED, LOW);
           
           //Get battery voltage
           vccVolt = ((float)ESP.getVcc()) / 1024;
@@ -105,7 +105,7 @@ void loop() {
       } else {
     
     //Turn OFF LED
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(BUILT_IN_LED, HIGH);
 
     //No longer waiting on server, set False
     WAITINGONSERVER=false;
