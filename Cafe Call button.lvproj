@@ -27,6 +27,7 @@
 		<Item Name="Button.lvclass" Type="LVClass" URL="../Button Class/Button.lvclass"/>
 		<Item Name="Main GUI.vi" Type="VI" URL="../Main GUI.vi"/>
 		<Item Name="Error Handler.vi" Type="VI" URL="../Error Handler.vi"/>
+		<Item Name="Fade For Loop.vi" Type="VI" URL="../Fade For Loop.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
@@ -57,7 +58,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D6756A7E-6FAB-41DE-8805-EBB51F750CF9}</Property>
-				<Property Name="Bld_version.build" Type="Int">13</Property>
+				<Property Name="Bld_version.build" Type="Int">14</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/CafeCallButton.exe</Property>
