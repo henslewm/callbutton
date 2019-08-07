@@ -100,7 +100,7 @@ void loop() {
 
             //Turn Wifi OFF
             WiFiOFF();
-            delay(1000);
+            delay(100);
           }
       } else {
     
@@ -129,7 +129,7 @@ void loop() {
     //Send ID,OFF message to server
     Serial.println("Sending OFF to Server");
     client.println(OFF);
-    delay(2000);
+    delay(3000);
     
     //Turn WiFi Off
     WiFiOFF();
@@ -184,6 +184,7 @@ void WiFiOFF() {
   Serial.println("Diconnecting WiFi...");
   WiFi.disconnect();
   WiFi.mode(WIFI_OFF);
+  delay(1000);
   
   //Check if it's disconnected.
   CheckWiFiStatus();
