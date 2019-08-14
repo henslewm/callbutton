@@ -4,20 +4,19 @@
 
 ////////////////// Define Variables //////////
 // Configure the device's network info
-String ID("T1F3/F4");
+String ID("T2A3/A4");
 
 //Configure the WiFi router authentication parameters
 const char ssid[] = "PemCafe1";
 const char pw[] = "3au5j75^s7lk";
 
-//const char ssid[] = "D52963_2.4";
-//const char pw[] = "TBW48AD604754";
 const uint16_t port = 6341;
 const char* host = "192.168.1.213";  //ip only
 float vccVolt;
 
 //Setup the LED pin number and ON/OFF Buttons
-//GPIO2 - D4 - BUILT_IN_LED2 = 2; //USE LED_BUILTIN instead FOR WEMOS D1 MINI
+//USE LED_BUILTIN instead FOR WEMOS D1 MINI
+//GPIO2 - D4 - BUILT_IN_LED2 = 2; 
 //const short int RST_DISABLE = 4;  // GPIO4 - D2
 const short int BUILT_IN_LED = 2; //USE LED_BUILTIN instead
 const short int CALL_BUTTON = 4; //GPIO16 - D0 Dude... ; GPIO0 - D3
@@ -56,7 +55,8 @@ void setup()
 ///////////////////////////////////////////////////////////////////////////////////////
 
 void loop() {
-
+  delay(0);
+  yield();
   //SOMEONE PUSHED THE BUTTON
   if (digitalRead(CALL_BUTTON) == LOW) {
     //For Debug
@@ -83,12 +83,11 @@ void loop() {
 
       if (!client.connect(host, port)) {
         Serial.println("connection failed");
-        Serial.println("wait 5 sec...");
-        delay(5000);
+        Serial.println("wait 3 sec...");
+        delay(3000);
 
         //Attempt to reconnect to host router
-        WiFi.disconnect();
-        delay(1000);
+        //WiFi.disconnect();
         WiFi.begin(ssid, pw);
         return;
       } else {
@@ -97,12 +96,14 @@ void loop() {
         Serial.print("Sending ");
         Serial.print(ON);
         Serial.println(" to Server");
-        client.println(ON);
-        delay(2000);
-
+        
+        for(int i = 0; i<20; i++){
+           client.println(ON); 
+        }
+        
         //Turn Wifi OFF
+        delay(1000);
         WiFiOFF();
-        delay(100);
       }
     } else {
 
@@ -118,12 +119,11 @@ void loop() {
       //Connect to Server
       if (!client.connect(host, port)) {
         Serial.println("connection failed");
-        Serial.println("wait 5 sec...");
-        delay(5000);
+        Serial.println("wait 3 sec...");
+        delay(3000);
 
         //Attempt to reconnect to host router
         WiFi.disconnect();
-        delay(1000);
         WiFi.begin(ssid, pw);
         return;
       }
@@ -132,9 +132,12 @@ void loop() {
       Serial.print("Sending ");
       Serial.print(OFF);
       Serial.println(" to Server");
-      client.println(OFF);
-      delay(3000);
+      for(int i=0;i<20;i++){
+        client.println(OFF);         
+      }
 
+      delay(1000);
+      
       //Turn WiFi Off
       WiFiOFF();
     }
@@ -168,7 +171,6 @@ void WiFiON() {
   //Attempt to connect to host router
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pw);
-  WiFi.mode(WIFI_STA);
 
   Serial.print("Connecting");
   while (WiFi.status() != WL_CONNECTED)
@@ -179,7 +181,6 @@ void WiFiON() {
   Serial.println();
   Serial.print("Connected, IP address: ");
   Serial.println(WiFi.localIP());
-  delay(100);
 
 }
 void WiFiOFF() {
@@ -188,7 +189,6 @@ void WiFiOFF() {
   Serial.println("Diconnecting WiFi...");
   WiFi.disconnect();
   WiFi.mode(WIFI_OFF);
-  delay(1000);
 
   //Check if it's disconnected.
   CheckWiFiStatus();
