@@ -4,7 +4,7 @@
 
 ////////////////// Define Variables //////////
 // Configure the device's network info
-String ID("T1F3/F4");
+String ID("T2D3/D4");
 
 //Configure the WiFi router authentication parameters
 const char ssid[] = "PemCafe1";

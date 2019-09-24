@@ -4,7 +4,7 @@
 
 ////////////////// Define Variables //////////
 // Configure the device's network info
-String ID("T2A3/A4");
+String ID("T2A13/A13");
 
 //Configure the WiFi router authentication parameters
 const char ssid[] = "PemCafe1";
@@ -97,7 +97,7 @@ void loop() {
         Serial.print(ON);
         Serial.println(" to Server");
         
-        for(int i = 0; i<20; i++){
+        for(int i = 0; i<10; i++){
            client.println(ON); 
         }
         
@@ -119,8 +119,8 @@ void loop() {
       //Connect to Server
       if (!client.connect(host, port)) {
         Serial.println("connection failed");
-        Serial.println("wait 3 sec...");
-        delay(3000);
+        Serial.println("wait 2 sec...");
+        delay(2000);
 
         //Attempt to reconnect to host router
         WiFi.disconnect();
@@ -132,7 +132,7 @@ void loop() {
       Serial.print("Sending ");
       Serial.print(OFF);
       Serial.println(" to Server");
-      for(int i=0;i<20;i++){
+      for(int i=0;i<10;i++){
         client.println(OFF);         
       }
 
