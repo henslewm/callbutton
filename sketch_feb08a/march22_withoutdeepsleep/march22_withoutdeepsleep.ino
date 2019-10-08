@@ -46,7 +46,7 @@ void setup()
   digitalWrite(BUILT_IN_LED, HIGH);
 
   //Call buttons Digital Pin as INPUT
-  pinMode(CALL_BUTTON, INPUT);
+  pinMode(CALL_BUTTON, INPUT_PULLUP);
 
   //Setup the Serial output for debugging
   Serial.begin(115200);

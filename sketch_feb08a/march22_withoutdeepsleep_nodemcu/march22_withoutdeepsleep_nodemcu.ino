@@ -4,7 +4,7 @@
 
 ////////////////// Define Variables //////////
 // Configure the device's network info
-String ID("T2A13/A13");
+String ID("T3C13/C14");
 
 //Configure the WiFi router authentication parameters
 const char ssid[] = "PemCafe1";
@@ -46,7 +46,7 @@ void setup()
   digitalWrite(BUILT_IN_LED, HIGH);
 
   //Call buttons Digital Pin as INPUT
-  pinMode(CALL_BUTTON, INPUT);
+  pinMode(CALL_BUTTON, INPUT_PULLUP);
 
   //Setup the Serial output for debugging
   Serial.begin(115200);
