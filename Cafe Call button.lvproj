@@ -59,9 +59,9 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D6756A7E-6FAB-41DE-8805-EBB51F750CF9}</Property>
-				<Property Name="Bld_version.build" Type="Int">17</Property>
+				<Property Name="Bld_version.build" Type="Int">19</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">Application.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">CallButton.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/CafeCallButton.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
@@ -71,7 +71,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/TypeDefs/icon.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{0111CAD5-259E-4A9C-9D17-574F02721F11}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{90F0DC8D-7BA3-4E7D-8996-D63A5FB5DE2A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main GUI.vi</Property>
@@ -83,7 +83,7 @@
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 </Property>
 				<Property Name="TgtF_productName" Type="Str">CafeCallButton</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{05ADFEAE-C480-438D-B729-8820AD5A03D7}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">Application.exe</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">CallButton.exe</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 		</Item>
